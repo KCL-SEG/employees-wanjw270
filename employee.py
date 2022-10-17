@@ -2,7 +2,7 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name, monthlyContract, hourlyContract, hour, bonusCommission, contractCommission,contractNumber):
+    def __init__(self, name, monthlyContract, hourlyContract, hour, bonusCommission, contractCommission, contractNumber):
         self.name = name
         self.monthlyContract = monthlyContract
         self.hourlyContract= hourlyContract
@@ -13,8 +13,9 @@ class Employee:
 
 
     def get_pay(self):
-        pay = self.contract.monthlyContract + self.hourlyContract * self.hour + self.bonusCommission + self.contractCommission * self.contractNumber
+        pay = self.monthlyContract + self.hourlyContract * self.hour + self.bonusCommission + self.contractCommission * self.contractNumber
         return pay
+        
 
     def __str__(self):
         str = f"{self.name} works on a "
@@ -23,9 +24,9 @@ class Employee:
         else:
             str += f"contract of {self.hour} hours at {self.hourlyContract}/hour"    
         if self.bonusCommission != 0:
-            str += f" and receives a bonus commission of {self.bonusCommssion}"
+            str += f" and receives a bonus commission of {self.bonusCommission}"
         elif self.contractCommission != 0:
-            str += f" and receives a commission for {self.contractNUmber} contract(s) at {self.contractCommission}/contract"    
+            str += f" and receives a commission for {self.contractNumber} contract(s) at {self.contractCommission}/contract"    
 
         str += f". Their total pay is {self.get_pay()}."
 
