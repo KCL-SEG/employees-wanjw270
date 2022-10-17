@@ -13,8 +13,16 @@ class Employee:
 
 
     def get_pay(self):
-        pay = self.monthlyContract + self.hourlyContract * self.hour + self.bonusCommission + self.contractCommission * self.contractNumber
-        return pay
+        pay = 0
+        if self.monthlyContract != 0:
+            pay += self.monthlyContract
+        else:
+            pay += self.hourlyContract * self.hour
+        if self.bonusCommission != 0:
+            pay += self.bonusCommission
+        else:
+            pay += self.contractCommission * self.contractNumber
+        return pay               
         
 
     def __str__(self):
